@@ -1,0 +1,517 @@
+/**
+ * style.scss
+ * ---
+ * Main `sass` file. Import here `sass` files
+ */
+
+
+@import "sass-partials/_reboot";
+@import "sass-partials/_fonts";
+@import "sass-partials/_variables";
+@import "sass-partials/_wordpress";
+@import "sass-partials/_header";
+@import "sass-partials/_content"; // common for gutenberg and frontend
+@import "sass-partials/_print";
+
+
+
+
+html {
+    font-size: 15px;
+}
+body {
+    font-family: $font-default;
+    line-height: 2.1;
+    color: #000;
+    letter-spacing: .02em; /** 20 */
+}
+.browserupgrade {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+.container {
+    padding-left: 35px;
+    padding-right: 35px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.container--narrow {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.container--wide {
+    padding-left: 0;
+    padding-right: 0;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.col {
+    flex-grow: 1;
+    flex-basis: calc(50% - 30px);
+    &:not(:first-child) {
+        margin-left: 60px;
+    }
+}
+blockquote {
+    padding-left: 3rem;
+    position: relative;
+    &:before {
+        content: "”";
+        font-family: $font-headings;
+        line-height: 1;
+        font-size: 4.95rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    p {
+        margin-bottom: 3rem;
+    }
+    cite {
+        font-family: $font-alternative;
+        font-style: normal;
+        font-size: 1rem;
+    }
+}
+.text-link {
+    font-family: $font-alternative;
+    letter-spacing: .05em;
+    text-decoration: underline;
+    &--small {
+        font-size: .765rem;
+    }
+    &--big {
+        font-family: $font-headings;
+        letter-spacing: .02em;
+        font-size: 4.35rem;
+        line-height: 1;
+    }
+}
+
+
+
+/*------------------------------------*\
+    MAIN
+\*------------------------------------*/
+
+.page-header {
+	padding: 220px 0 2rem;
+}
+
+/*------------------------------------*\
+    PAGES
+\*------------------------------------*/
+
+.home .section {
+    padding: 4rem 0;
+    &--intro {
+        text-align: center;
+        h1 {
+            margin: 5rem 0 -3rem;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    &--beyond {
+        h2 {
+            margin-left: -125px;
+            margin-bottom: 3rem;
+        }
+        .row .col:first-child {
+            flex-basis: 30%;
+            max-width: 437px;
+            padding-top: 8rem;
+        }
+    }
+    &--projects {
+        .container {
+            position: relative;
+        }
+        .project-hentry {
+            align-content: flex-end;
+        }
+        .project-hentry .project-hentry__image {
+            flex-basis: 66.66%;
+            .post-thumbnail {
+                margin-bottom: 0;
+            }
+        }
+        .project-hentry .project-hentry__text {
+            flex-basis: calc(33.33% - 30px);
+            align-self: flex-end;
+            margin-left: 30px;
+        }
+        .text-link--big {
+            position: absolute;
+            bottom: -25px;
+            left: calc(33.33% + 30px);
+            transform: translateX(-50%);
+            
+        }
+    }
+    &--books {
+        .books-image {
+            background: #000 url('../img/home-3.jpg') center center no-repeat;
+            background-size: cover;
+            padding: 3rem;
+            &__inner {
+                max-width: 260px;
+                padding-top: 140px;
+                color: #fff;
+                font-size: .9rem;
+                h2 {
+                    font-size: 4.25rem;
+                }
+            }
+        }
+    }
+    &--gallery {
+        background: linear-gradient(to top, #ffffff 0%,#ffffff 27%,$grey 27%,$grey 100%);
+        h2 {
+            position: relative;
+            margin-bottom: -2.5rem;
+            margin-left: 3rem;
+            z-index: 1;
+        }
+        .gallery-text {
+            text-align: center;
+            max-width: 560px;
+            margin: -175px auto 0;
+        }
+    }
+    &--news {
+        .row {
+            margin-left: -35px;
+            margin-right: -35px;
+        }
+    }
+}
+
+
+/*------------------------------------*\
+    POSTS
+\*------------------------------------*/
+
+.primary.row {
+    margin-left: -35px;
+    margin-right: -35px;
+}
+.row .hentry {
+    flex-basis: 25%;
+    padding: 0 35px;
+}
+.row.three-col .hentry {
+    flex-basis: 33.33%;
+}
+.news-hentry {
+    margin: 2rem 0;
+    font-family: $font-alternative;
+    font-weight: 300;
+    font-size: .8rem;
+    .entry-title {
+        font-family: $font-alternative;
+        font-size: .9rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 0;
+        letter-spacing: .05em;
+    }
+}
+.project-hentry {
+    margin: 2rem 0;
+    font-size: .9rem;
+    .post-thumbnail {
+        display: block;
+        margin-bottom: 1rem;
+    }
+    .entry-title {
+        font-family: $font-alternative;
+        font-size: 1rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 0;
+        letter-spacing: .03em;
+        a {
+            text-decoration: underline;
+        }
+    }
+    &--home {
+        font-size: 1rem;
+        margin: 100px 0;
+        .entry-title,
+        .entry-meta,
+        .entry-header {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.single .page-title {
+    margin: 0;
+}
+.single .project-meta {
+    font-size: 1rem;
+    margin-top: .5rem;
+    font-family: $font-alternative;
+    letter-spacing: .05em;
+}
+.single .project-featured-image {
+    padding-left: 35px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: right;
+}
+.single .gallery-section {
+    margin-bottom: 4rem;
+}
+.taxonomy-description {
+    margin-top: .5rem;
+}
+.taxonomy-description p {
+    margin-bottom: .5rem;
+}
+.taxonomy-description p:last-of-type {
+    margin-bottom: 0;
+}
+.post-navigation {
+    background: #efefef;
+    padding: 2rem;
+}
+.post-navigation::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.post-navigation .nav-next,
+.nav-next .meta-nav {
+    float: right;
+}
+.post-navigation .nav-previous,
+.nav-previous .meta-nav {
+    float: left;
+}
+.post-navigation .meta-nav {
+    margin: 0 1rem;
+}
+
+.pagination,
+.page-links {
+	display: block;
+	text-align: center;
+	clear: both;
+	margin-bottom: 2rem;
+}
+.pagination .page-numbers,
+.page-links .page-numbers {
+    background-color: #f9f9f9;
+    min-width: 2rem;
+    padding: 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+.pagination .page-numbers.dots,
+.pagination .page-numbers.next, 
+.pagination .page-numbers.prev {
+    width: auto;
+    font-size: .9em;
+    background: none;
+}
+.pagination span.page-numbers {
+    background-color: #eee;
+}
+.author-info {
+    border-top: solid 1px #e4e4e4;
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+/*------------------------------------*\
+	SLIDER
+\*------------------------------------*/
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    padding-top: 74px;
+}
+.swiper-slide {
+    text-align: center;
+    width: auto;
+    max-width: 100%;
+    height: 500px;
+    img {
+        width: auto;
+        height: 100%;
+    }
+}
+.swiper-button-next, 
+.swiper-button-prev {
+    top: 0;
+    margin-top: 0;
+    color: #000;
+}
+
+
+/*------------------------------------*\
+	FOOTER
+\*------------------------------------*/
+
+.footer{
+    position: relative;
+    padding-top: 140px;
+    font-size: .95rem;
+    margin-top: 200px;
+}
+.footer__text {
+    width: 70%;
+    max-width: 1070px;
+    background: $grey;
+    padding: 100px 64px 55px 100px;
+    .footer-title,
+    .widget-title,
+    .last-row {
+        font-family: $font-alternative;
+    }
+    .footer-title {
+        font-weight: normal;
+        letter-spacing: .02em;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 55px;
+    }
+    .widget-title,
+    .last-row {
+        font-size: .75rem;
+        letter-spacing: .05em;
+        font-weight: 300;
+    }
+    .widget-title {
+        margin-bottom: 1rem;
+        +p,
+        +ul {
+            margin-top: 0;
+        };
+    }
+    .some-menu {
+        padding-left: 0;
+        list-style-type: none;
+        li {
+            display: inline-block;
+            margin-right: 1rem;
+            a {
+                display: block;
+            }
+        }
+    }
+    .last-row {
+        margin-top: 130px;
+        align-items: flex-end;
+        .col:last-child {
+            text-align: right;
+            text-transform: uppercase;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .copytext a {
+        text-transform: uppercase;
+    }
+}
+.footer__image {
+    width: 50%;
+    width: calc(50% - 30px);
+    max-width: 710px;
+    background: transparent url('../img/footer.jpg') center center no-repeat;
+    background-size: cover;
+    height: 1px;
+    padding-top: 33%;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    z-index: -1;
+}
+
+
+
+
+/*------------------------------------*\
+    RESPONSIVE
+\*------------------------------------*/
+
+/* Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	.page-header {
+		padding: 220px 0 2rem;
+	}
+	.entry-content {
+		max-width: 900px;
+		margin-left: 6rem;
+	}
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {}
+
+
+
+/* Large devices (desktops, less than 1199px)*/
+@media (max-width: 1199px) {}
+
+/* Medium devices (tablets, less than 991px)*/
+@media (max-width: 991px) {}
+
+/* Small devices (landscape phones, less than 767px)*/
+@media (max-width: 767px) {}
+
+/* Extra small devices (portrait phones, less than 575px)*/
+@media (max-width: 575px) {}
+
+
+
+
+/*------------------------------------*\
+    MISC
+\*------------------------------------*/
+
+::selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+::-webkit-selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+::-moz-selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+
+
+
+

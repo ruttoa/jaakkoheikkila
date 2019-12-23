@@ -1,0 +1,128 @@
+/*------------------------------------*\
+    HEADER
+\*------------------------------------*/
+
+.navbar-brand {
+    margin-right: auto;
+    width: auto;
+    max-width: 300px;
+    white-space: normal;
+    float: left;
+    font-family: $font-alternative;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
+.logo-placeholder {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #000;
+    border-radius: 50%;
+}
+.logo-img {
+    max-height: 50px;
+}
+.navbar {
+    padding: 2rem 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    .menu-item {
+        display: block;
+        margin: 0 .5rem;
+        a {
+            padding: .25rem .5rem .35rem;
+            display: block;
+            position: relative;
+            font-size: .95rem;
+        }
+        &.current-menu-item a {
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                height: 1px;
+                width: 100%;
+                background-color: #000;
+                display: block;
+            }
+            &:before {
+                top: 0;
+            }
+            &:after {
+                bottom: 0;
+                width: 50%;
+            }
+        }
+    }
+}
+.site-title {
+    font-size: 1.5rem;
+    margin: .5rem auto;
+}
+.site-description {
+	font-size: 1rem;
+	line-height: 1.2;
+	margin-bottom: 0;
+    font-weight: 400;
+}
+.site-header .btn {
+    float: right;
+    &:after {
+        content: "";
+        height: 18px;
+        width: 11px;
+        display: inline-block;
+        background: transparent url('../img/cell-phone.svg') center center no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-left: 1rem;
+        margin-top: -6px;
+    }
+}
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {
+    .navbar-toggler {
+        display: none;
+    }
+    .navbar-nav {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (max-width: 1199px) {}
+
+@media (max-width: 991px) {}
+
+@media (max-width: 767px) {
+    .logo-img {
+        max-height: 40px;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo-img {
+        max-height: 35px;
+    }
+    .site-header .btn {
+        display: none;
+    }
+}
