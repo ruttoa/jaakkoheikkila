@@ -61,6 +61,7 @@
 					centeredSlides: true,
 					spaceBetween: 30,
 					loop: true,
+					loopedSlides: 2,
 					navigation: {
 						nextEl: '.swiper-button-next',
 						prevEl: '.swiper-button-prev',
