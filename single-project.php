@@ -3,7 +3,7 @@
 		<?php while ( have_posts() ) : the_post(); ?>
 			<section>
 				<?php get_template_part( 'template-parts/page', 'header' ); ?>
-				<div class="container entry-container clearfix">
+				<div class="container container--narrow entry-container clearfix">
 					<div class="entry-content">
 					<?php 
 					$project_meta = get_field('project_meta');
@@ -19,7 +19,7 @@
 					</div>
 					<?php //the_content(); ?>
 				</div>
-				<div class="container-wide project-featured-image">
+				<div class="container container--narrow project-featured-image">
 					<?php 
 					if ( has_post_thumbnail() ): 
 						the_post_thumbnail( 'hero-image' );

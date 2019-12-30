@@ -1,5 +1,5 @@
 <header class="page-header">
-	<div class="container">
+	<div class="container container--narrow">
 		<?php if ( is_front_page() && is_home() ) { // Default homepage ?>
 			<h1 class="page-title">
 				<?php echo get_bloginfo( 'name' ); ?>
