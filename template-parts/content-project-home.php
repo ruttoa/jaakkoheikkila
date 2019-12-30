@@ -8,14 +8,16 @@
 	</div>
 	<div class="col project-hentry__text">
 		<header class="entry-header">
+			<a href="<?php the_permalink(); ?>" rel="bookmark">
 			<?php 
-			the_title( sprintf( '<h4 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h4>' ); 
+			the_title( '<h4 class="entry-title">', '</h4>' ); 
 			$project_meta = get_field('project_meta');
 			if( $project_meta ):
 				echo '<div class="project-meta">' . $project_meta . '</div>';
 			endif;
 			?>
+			</a>
 		</header>
-		<a class="text-link text-link--small" href="#">explore more</a>
+		<a class="text-link text-link--small" href="<?php the_permalink(); ?>">explore more</a>
 	</div>
 </article>

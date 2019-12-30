@@ -54,7 +54,7 @@
 						<div class="books-image__inner">
 							<h2>Books</h2>
 							<p>There is no other way, the way worward is a mystery Dreams are movement, the future is in our blood Titian knew how to paint black, a man rises out of blackness.</p>
-							<a href="#books" class="text-link text-link--small">explore more</a>
+							<a href="/books" class="text-link text-link--small">explore more</a>
 						</div>
 					</div>
 				</div>
@@ -65,7 +65,7 @@
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home-4.jpg" alt="" />
 					<div class="gallery-text">
 						<p>You are able to order gallery images. I print them to the beautiful Hahnemuehle Photo Rag paper and sign them. </p>
-						<a href="#gallery" class="text-link text-link--big">explore more</a>
+						<a href="/gallery" class="text-link text-link--big">explore more</a>
 					</div>
 				</div>
 			</section>

@@ -289,6 +289,12 @@ blockquote {
 .single .gallery-section {
     margin-bottom: 4rem;
 }
+.single .quote-section .wp-block-pullquote {
+    max-width: 860px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
 .taxonomy-description {
     margin-top: .5rem;
 }
