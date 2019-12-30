@@ -206,6 +206,26 @@ blockquote {
 .row.three-col .hentry {
     flex-basis: 33.33%;
 }
+.post-type-archive-project {
+    .projects-pullquote {
+        background: #000;
+        color: #fff;
+        padding: 150px 2rem;
+        blockquote {
+            padding: 0;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        cite {
+            color: #fff;
+        }
+    }
+    .projects-intro {
+        max-width: 860px;
+        margin: 190px auto;
+        text-align: center;
+    }
+}
 .news-hentry {
     margin: 2rem 0;
     font-family: $font-alternative;
