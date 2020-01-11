@@ -3,7 +3,7 @@
 	<section>
 		<?php //get_template_part( 'template-parts/page', 'header' ); ?>
 		<div class="container">
-			<figure class="projects-pullquote wp-block-pullquote is-style-solid-color">
+			<figure class="projects-pullquote wp-block-pullquote is-style-solid-color has-background-black">
 				<blockquote>
 					<p>Images are intimate 
 					and poetic, exhaling the 

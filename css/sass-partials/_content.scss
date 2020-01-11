@@ -135,6 +135,12 @@ img.emoji {
             font-size: 4.25rem;
             line-height: 1.25;
             margin-bottom: 3rem;
+            &.small {
+                font-size: 1rem;
+                line-height: 2.1;
+                font-family: $font-default;
+                margin-bottom: 0;
+            }
         }
         cite {
             font-size: 1rem;

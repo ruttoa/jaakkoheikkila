@@ -25,6 +25,11 @@ body {
     color: #000;
     letter-spacing: .02em; /** 20 */
 }
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
 .browserupgrade {
     margin-bottom: 0;
     border-radius: 0;
@@ -206,24 +211,53 @@ blockquote {
 .row.three-col .hentry {
     flex-basis: 33.33%;
 }
-.post-type-archive-project {
-    .projects-pullquote {
-        background: #000;
-        color: #fff;
-        padding: 150px 2rem;
-        blockquote {
-            padding: 0;
-            max-width: 860px;
-            margin: 0 auto;
-        }
-        cite {
-            color: #fff;
-        }
+.wp-block-pullquote.has-background-black {
+    background: #000;
+    color: #fff;
+    padding: 150px 2rem;
+    blockquote {
+        padding: 0;
+        max-width: 860px;
+        margin: 0 auto;
     }
+    cite {
+        color: #fff;
+    }
+}
+.post-type-archive-project {
     .projects-intro {
         max-width: 860px;
         margin: 190px auto;
         text-align: center;
+    }
+}
+.page-template-gallery {
+    .wp-block-pullquote blockquote {
+        text-align: left;
+    }
+    .gallery-intro {
+        max-width: 860px;
+        margin: 150px auto;
+        text-align: center;
+    }
+}
+.page-template-books {
+    .books-list-wrapper {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .book {
+        position: relative;
+        flex: 0 0 50%;
+    }
+    #book-1 {
+        flex-basis: 36%;
+    }
+    #book-2 {
+        flex-basis: 59%;
+        margin-right: -65px;
     }
 }
 .news-hentry {
