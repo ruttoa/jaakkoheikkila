@@ -49,7 +49,7 @@
 						<?php foreach( $images as $image ): ?>
 							<div class="swiper-slide">
 								<a href="#" class="image-player-link" data-image-id="<?php echo esc_attr($image['id']); ?>"> 
-									<img src="<?php echo esc_url($image['sizes']['hero-image']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" data-src="<?php echo esc_url($image['sizes']['full']); ?>" />
+									<img src="<?php echo esc_url($image['sizes']['hero-image']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" data-src="<?php echo esc_url($image['url']); ?>" />
 								</a>
 							</div>
 						<?php endforeach; ?>
@@ -87,9 +87,10 @@
 							<div class="swiper-slide">
 								<div class="content-outer">
 									<div class="story-big-image">
-										<img src="<?php echo esc_url($image['sizes']['hero-image']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" data-src="<?php echo esc_url($image['sizes']['full']); ?>" />
+										<img src="" class="swiper-lazy" alt="<?php echo esc_attr($image['alt']); ?>" data-src="<?php echo $image['url']; ?>" />
 									</div>
 								</div>
+								<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
 							</div>
 						<?php endforeach; ?>
 						</div>

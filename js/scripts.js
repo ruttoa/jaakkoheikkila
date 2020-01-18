@@ -65,6 +65,8 @@ function Gallery($el, options) {
         spaceBetween: 30,
         loop: true,
         loopedSlides: 2,
+        preloadImages: false,
+        lazy: true,
         navigation: {
             nextEl: '#project-slider-big .swiper-button-next',
             prevEl: '#project-slider-big .swiper-button-prev',
