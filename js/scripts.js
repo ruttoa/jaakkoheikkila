@@ -66,7 +66,11 @@ function Gallery($el, options) {
         loop: true,
         loopedSlides: 2,
         preloadImages: false,
-        lazy: true,
+        lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 1,
+            loadOnTransitionStart: true,
+        },
         navigation: {
             nextEl: '#project-slider-big .swiper-button-next',
             prevEl: '#project-slider-big .swiper-button-prev',
