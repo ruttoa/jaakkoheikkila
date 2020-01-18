@@ -99,13 +99,13 @@ if (!isset($content_width))
  * Register scripts and styles.
  */
 function theme_scripts_styles() {
-    wp_deregister_script('jquery');
-    wp_register_script('jquery', false);
+    //wp_deregister_script('jquery');
+    //wp_register_script('jquery', false);
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,900&display=swap', array(), '0.1');
     wp_enqueue_style('swiper', 'https://unpkg.com/swiper/css/swiper.min.css', array(), '0.1');
     wp_enqueue_style('styles-min', get_template_directory_uri() . '/dist/style.min.css', array('swiper'), '0.1');
     wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/js/swiper.min.js', array(), true);
-    wp_enqueue_script('scripts-min', get_template_directory_uri() . '/dist/scripts.min.js', array('swiper-js'), true);
+    wp_enqueue_script('scripts-min', get_template_directory_uri() . '/dist/scripts.min.js', array('jquery','swiper-js'), true);
     
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts_styles' );
@@ -139,8 +139,8 @@ function theme_remove_jquery_migrate($scripts) {
         $scripts->remove( 'jquery');
         $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4' );
         // Move jQuery to footer
-        $scripts->add_data('jquery', 'group', 1);
-        $scripts->add_data('jquery-core', 'group', 1);
+        //$scripts->add_data('jquery', 'group', 1);
+        //$scripts->add_data('jquery-core', 'group', 1);
     }
 }
 add_filter( 'wp_default_scripts', 'theme_remove_jquery_migrate' );
