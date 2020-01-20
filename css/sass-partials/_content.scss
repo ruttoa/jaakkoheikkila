@@ -169,11 +169,22 @@ img.emoji {
 
 @media (max-width: 1199px) {}
 
-@media (max-width: 991px) {}
+@media (max-width: 991px) {
+    h1, h2 {
+        font-size: 4.3rem;
+    }
+    .text-link--big,
+    .wp-block-pullquote.is-style-solid-color blockquote p {
+        font-size: 3.25rem;
+    }
+}
 
 @media (max-width: 767px) {
-    .entry-content {
-        padding: 0 15px;
+    h1, h2 {
+        font-size: 3.3rem;
+    }
+    .wp-block-pullquote.is-style-solid-color blockquote p {
+        font-size: 2.25rem;
     }
     .entry-content > .alignfull,
     .entry-content > .alignwide {
@@ -204,12 +215,4 @@ img.emoji {
     h1, h2 {
         font-size: 2.5rem; 
     }
-    .has-large-font-size {
-        font-size: 2rem;
-    }
-    .has-v-up:after,
-    .has-v-down:after {
-        height: 107px;
-    }
-
 }

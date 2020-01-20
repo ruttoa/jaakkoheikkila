@@ -44,10 +44,10 @@ function Gallery($el, options) {
         slidesPerView: 'auto',
         centeredSlides: true,
         spaceBetween: 30,
-        loop: {
-            loopAdditionalSlides: 3,
-            loopedSlides: 3,
-        },
+        loop: true,
+        loopAdditionalSlides: 3,
+        loopedSlides: 3,
+        loopFillGroupWithBlank: true,
         navigation: {
             nextEl: '#project-slider .swiper-button-next',
             prevEl: '#project-slider .swiper-button-prev',
@@ -92,7 +92,12 @@ function Gallery($el, options) {
     
     //swiperContainer = $slider.find('.swiper-container');
     //swiper = new Swiper(swiperContainer, args);
-
+    /*
+    setTimeout(function () {
+        swiperThumbs.update(true);
+        swiperThumbs.slideTo(0, 0)
+    }, 200);
+    */
     $(document).on('click', '.slider .image-player-link', function (e) {
         e.preventDefault();
         $('.b-overlay').addClass('show visible');

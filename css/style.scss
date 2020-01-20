@@ -442,11 +442,12 @@ blockquote {
 .swiper-slide {
     text-align: center;
     width: auto;
-    max-width: 100%;
+    max-width: none;
     height: 500px;
     img {
         width: auto;
         height: 100%;
+        max-width: none;
     }
 }
 .swiper-button-next, 
@@ -729,7 +730,39 @@ blockquote {
 @media (max-width: 991px) {}
 
 /* Small devices (landscape phones, less than 767px)*/
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+    .container--narrow {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .text-link--big {
+        font-size: 2.25rem;
+    }
+    .entry-content {
+        padding: 0 15px;
+    }
+    .navbar-nav {
+        flex-direction: row;
+    }
+    .home .section--gallery .gallery-text {
+        margin-top: -100px;
+        padding: 0 30px;
+    }
+    .row .hentry,
+    .row.three-col .hentry {
+        flex-basis: 50%;
+    }
+    .footer {
+        padding-top: 100px;
+    }
+    .footer__text {
+        width: calc(100% - 30px);
+        padding: 60px 30px;
+    }
+    .footer__image {
+        right: 0;
+    }
+}
 
 /* Extra small devices (portrait phones, less than 575px)*/
 @media (max-width: 575px) {}
