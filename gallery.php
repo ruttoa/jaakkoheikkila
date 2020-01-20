@@ -2,7 +2,13 @@
 /* Template Name: Gallery */
 get_header(); ?>
 <main role="main" class="clearfix">
-<?php while ( have_posts() ) : the_post(); ?>
+<?php 
+while ( have_posts() ) : the_post(); 
+	$gallery_1_thumb = get_field('gallery_1_thumb');
+	$gallery_2_thumb = get_field('gallery_2_thumb');
+	$gallery_1 = get_field('gallery_1');
+	$gallery_2 = get_field('gallery_2');
+	?>
 	<section>
 		<div class="container">
 			<figure class="projects-pullquote wp-block-pullquote is-style-solid-color has-background-black">
@@ -18,12 +24,24 @@ get_header(); ?>
 				<div class="row">
 					<div class="col">
 						<h3>Wall 1</h3>
+						<?php
+						if( $gallery_1_thumb ) {
+							echo wp_get_attachment_image( $gallery_1_thumb, 'feed-thumbnail' );
+						}
+						?>
+						<a href="#" class="open-gallery-link">Click to open <span></span></a>
 					</div>
 					<div class="col">
 						<h3>Wall 2</h3>
+						<?php
+						if( $gallery_2_thumb ) {
+							echo wp_get_attachment_image( $gallery_2_thumb, 'feed-thumbnail' );
+						}
+						?>
+						<a href="#" class="open-gallery-link">Click to open <span></span></a>
 					</div>
 				</div>
-				<div class="clearfix">
+				<div class="clearfix gallery-description">
 					<p>I print my images to the smooth Hahnemuehle Photo Rag paper, and sign them. The main paper size is A3+. When you are thinking to order prints, please contact me.</p>
 				</div>
 			</div>

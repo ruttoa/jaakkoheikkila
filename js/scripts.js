@@ -41,15 +41,13 @@ function Gallery($el, options) {
 }
 */
     var swiperThumbs = new Swiper('#project-slider .swiper-container', {
-        //lazy: true,
-        //threshold: 20,
-        //grabCursor: !0,
         slidesPerView: 'auto',
         centeredSlides: true,
         spaceBetween: 30,
-        loop: true,
-        loopedSlides: 2,
-        //freeMode: true,
+        loop: {
+            loopAdditionalSlides: 3,
+            loopedSlides: 3,
+        },
         navigation: {
             nextEl: '#project-slider .swiper-button-next',
             prevEl: '#project-slider .swiper-button-prev',
@@ -61,10 +59,8 @@ function Gallery($el, options) {
     });
     var swiperBig = new Swiper('#project-slider-big .swiper-container', {
         slidesPerView: 1,
-        /*centeredSlides: true,*/
         spaceBetween: 30,
         loop: true,
-        loopedSlides: 2,
         preloadImages: false,
         lazy: {
             loadPrevNext: true,
