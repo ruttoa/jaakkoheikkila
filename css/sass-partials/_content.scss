@@ -124,6 +124,10 @@ img.emoji {
 
 .wp-block-pullquote {
     font-family: $font-headings;
+    color: #000;
+    cite {
+        color: #000;
+    }
     &.is-style-solid-color blockquote {
         max-width: none;
         text-align: center;
