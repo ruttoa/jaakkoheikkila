@@ -9,3 +9,10 @@ $pink: #FFD9DA;
 $font-default: "Playfair Display", serif;
 $font-headings: "GT Super Display", serif;
 $font-alternative: "GT America", serif;
+
+@mixin button-reset {
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 0;
+}

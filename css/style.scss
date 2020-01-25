@@ -60,6 +60,9 @@ body {
         margin-left: 60px;
     }
 }
+.d-none {
+    display: none;
+}
 blockquote {
     padding-left: 3rem;
     position: relative;
@@ -96,6 +99,8 @@ blockquote {
     }
 }
 .open-gallery-link {
+    @include button-reset;
+    position: relative;
     font-family: $font-alternative;
     letter-spacing: .04em;
     text-decoration: underline;
@@ -105,15 +110,17 @@ blockquote {
     display: inline-block;
     margin: 1.5rem 0;
     text-transform: uppercase;
+    padding: .5rem 4.5rem .5rem 1rem;
     span {
-        display: inline-block;
-        position: relative;
+        display: block;
+        position: absolute;
+        right: calc(12px + 1rem);
+        top: 50%;
+        transform: translateY(-50%);
         width: 16px;
         height: 16px;
         border: solid 1px #000;
         border-radius: 50%;
-        margin-left: 1.5rem;
-        vertical-align: middle;
         &:before,
         &:after {
             content:"";
@@ -454,13 +461,39 @@ blockquote {
 .swiper-button-prev {
     top: 0;
     margin-top: 0;
+    padding: 1rem;
     color: #000;
+    width: auto;
+    height: auto;
+    &:after {
+        content:"";
+        width: 28px;
+        height: 28px;
+        transform-origin: center;
+    }
 }
 .swiper-button-next {
-    right: 35px;
+    right: 25px;
+    &:after {
+        border-right: solid 1px #000;
+        border-top: solid 1px #000;
+        transform: translateX(-33.33%) rotate(45deg);
+    }
 }
 .swiper-button-prev {
-    left: 35px;
+    left: 25px;
+    &:after {
+        border-left: solid 1px #000;
+        border-bottom: solid 1px #000;
+        transform: translateX(33.33%) rotate(45deg);
+    }
+}
+.slider .open-gallery-link {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: .5rem 0;
 }
 
 
@@ -562,6 +595,7 @@ blockquote {
     > div,
     .close {
         float: left;
+        cursor: pointer;
     }
     .close {
         height: 24px;
@@ -584,7 +618,7 @@ blockquote {
         }
     }
     .grid-open {
-        display: block;
+        display: none;
         width: 24px;
         height: 24px;
         margin-right: 2rem;
@@ -599,6 +633,72 @@ blockquote {
     }
     .grid-close {
         display: none;
+        margin-right: 2rem;
+        position: relative;
+        span {
+            display: block;
+            width: 33px;
+            height: 22px;
+            border: solid 1px #000;
+            margin: 1px 30px;
+        }
+        &:before,
+        &:after {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            content:"";
+            display: block;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            transform-origin: center;
+        }
+        &:before {
+            border-left: solid 1px #000;
+            border-bottom: solid 1px #000;
+            left: 4px;
+        }
+        &:after {
+            border-right: solid 1px #000;
+            border-top: solid 1px #000;
+            right: 4px;
+        }
+    }
+}
+.b-overlay__grid {
+    position: relative;
+    display: none;
+    .row {
+        justify-content: flex-start;
+        margin-left: -2rem;
+        margin-right: -2rem;
+        .col {
+            flex-basis: calc(16.66% - 4rem);
+            flex-shrink: 0;
+            flex-grow: 0;
+            display: flex;
+            align-items: center;
+            margin: 2rem;
+        }
+    }
+    img {
+        margin: auto;
+        cursor: pointer;
+    }
+}
+.b-overlay.b-overlay--gallery-mode {
+    .b-overlay__controls .grid-close,
+    .b-overlay__grid {
+        display: block;
+    }
+    .b-overlay__slider {
+        display: none;
+    }
+}
+.b-overlay.b-overlay--slider-mode {
+    .b-overlay__controls .grid-open,
+    .b-overlay__slider {
+        display: block;
     }
 }
 

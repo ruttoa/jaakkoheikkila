@@ -43,36 +43,38 @@
 				<?php 
 				$images = get_field('gallery');
 				if( $images ): ?>
-				<div id="project-slider" class="slider">
+				<div id="project-slider" class="slider project-slider">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
-						<?php foreach( $images as $image ): ?>
+						<?php $i = 1;
+						foreach( $images as $image ): ?>
 							<div class="swiper-slide">
-								<a href="#" class="image-player-link" data-image-id="<?php echo esc_attr($image['id']); ?>"> 
+								<a href="#" class="image-player-link" data-target="<?php echo $i; ?>" data-image-id="<?php echo esc_attr($image['id']); ?>"> 
 									<img src="<?php echo esc_url($image['sizes']['hero-image']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" data-src="<?php echo esc_url($image['url']); ?>" />
 								</a>
 							</div>
-						<?php endforeach; ?>
+						<?php $i++;
+						endforeach; ?>
 						</div>
 						<div class="swiper-button-prev"></div>
     					<div class="swiper-button-next"></div>
+						<button class="open-gallery-link js-open-gallery" data-target="#project-gallery-overlay">Click to open <span></span></button>
 					</div>
 				</div>
 				<?php endif; ?>
 				
 			</section>
-			<div class="b-overlay">
+			<div id="project-gallery-overlay" class="b-overlay">
 				<div class="b-overlay__header">
 					<div class="b-overlay__site-title"><a href="<?php echo esc_url(home_url('/')); ?>">Jaakko Heikkilä</a></div>
 					<h3 class="b-overlay__gallery-title"><?php the_title(); ?></h3>				
 					<div class="b-overlay__controls category-photographer">
-						<!--div class="counter overlay-control show visible">
-							<span class="active">1</span>/<span class="sum">50</span>
-						</div>-->
-						<div class="grid-open js-overlay-grid-open overlay-control show visible">
+						<div class="grid-open js-overlay-grid-open show visible">
 							<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
 						</div>
-						<div class="grid-close js-overlay-grid-close grid-control"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 39.9 15"><defs><style>.cls-1,.cls-3{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{stroke:#312e2d;}</style><clipPath id="clip-path" transform="translate(-254 -375)"><rect class="cls-1" x="254" y="375" width="39.9" height="15"></rect></clipPath></defs><title>gallery</title><g class="cls-2"><rect class="cls-3" x="10.87" y="0.5" width="18.77" height="14"></rect><polyline class="cls-3" points="36.33 5.18 39.22 8.28 36.33 11.37"></polyline><polyline class="cls-3" points="3.57 5.18 0.68 8.28 3.57 11.37"></polyline></g></svg></div>
+						<div class="grid-close js-overlay-grid-close">
+							<span></span>
+						</div>
 						
 						<a href="" class="close js-overlay-close">
 							<em class="line-1"></em>
@@ -80,7 +82,7 @@
 						</a>
 					</div>
 				</div>
-				<div id="project-slider-big" class="slider">
+				<div id="project-slider-big" class="slider b-overlay__slider">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
 						<?php foreach( $images as $image ): ?>
@@ -98,6 +100,23 @@
 						<div class="swiper-button-next"></div>
 					</div>
 					<div class="swiper-pagination"></div>
+				</div>
+				<div id="project-slider-grid" class="gallery-grid b-overlay__grid">
+					<div class="container container--narrow">
+						<div class="row">
+							<?php 
+							$i = 1;
+							foreach( $images as $image ): 
+							?>
+							<div class="col">
+								<img data-target="<?php echo $i; ?>" src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+							</div>
+							<?php 
+							$i++; 
+							endforeach; 
+							?>
+						</div>
+					</div>
 				</div>
 			</div>
 			<section class="projects-feed-section">

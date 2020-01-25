@@ -29,7 +29,7 @@ while ( have_posts() ) : the_post();
 							echo wp_get_attachment_image( $gallery_1_thumb, 'feed-thumbnail' );
 						}
 						?>
-						<a href="#" class="open-gallery-link">Click to open <span></span></a>
+						<button class="open-gallery-link js-open-gallery" data-target="#wall-1-gallery">Click to open <span></span></button>
 					</div>
 					<div class="col">
 						<h3>Wall 2</h3>
@@ -38,7 +38,7 @@ while ( have_posts() ) : the_post();
 							echo wp_get_attachment_image( $gallery_2_thumb, 'feed-thumbnail' );
 						}
 						?>
-						<a href="#" class="open-gallery-link">Click to open <span></span></a>
+						<button class="open-gallery-link js-open-gallery" data-target="#wall-2-gallery">Click to open <span></span></button>
 					</div>
 				</div>
 				<div class="clearfix gallery-description">
