@@ -1,45 +1,45 @@
 jQuery(document).ready(function ($) {
-/*
-function Gallery($el, options) {
-    var style = options.style || "oneImage";
-    delete options.style;
-    var $gal = $el;
-    var $slides = $gal.children("dl");
-    var id = $gal.attr("id");
-    var $container = $('<div class="' + id + '"></div>').appendTo($gal);
-    var $wrapper = $('<div class="swiper-wrapper"></div>').appendTo($container);
-    if (style == "oneImage") {
-        $slides.each(function () {
-            var $slide = $('<div class="swiper-slide"></div>');
-            var imgSrc = $(this).find("img").attr("src");
-            $slide.css('background-image', 'url(' + imgSrc + ')');
-            var text = $(this).find("dd").html();
-            $('<h1 class="slide-text"></h1>').html(text).appendTo($slide);
-            $slide.appendTo($wrapper);
-            $(this).remove()
-        });
-        $container.addClass('oneImage')
-    } else if (style == "sameHeight") {
-        $slides.each(function () {
-            var $slide = $('<div class="swiper-slide"></div>');
-            $slide.html($(this).find("img"));
-            var text = $(this).find("dd").html();
-            $('<h1 class="slide-text"></h1>').html(text).appendTo($slide);
-            $slide.appendTo($wrapper);
-            $(this).remove()
-        });
-        $container.addClass('sameHeight')
+    /*
+    function Gallery($el, options) {
+        var style = options.style || "oneImage";
+        delete options.style;
+        var $gal = $el;
+        var $slides = $gal.children("dl");
+        var id = $gal.attr("id");
+        var $container = $('<div class="' + id + '"></div>').appendTo($gal);
+        var $wrapper = $('<div class="swiper-wrapper"></div>').appendTo($container);
+        if (style == "oneImage") {
+            $slides.each(function () {
+                var $slide = $('<div class="swiper-slide"></div>');
+                var imgSrc = $(this).find("img").attr("src");
+                $slide.css('background-image', 'url(' + imgSrc + ')');
+                var text = $(this).find("dd").html();
+                $('<h1 class="slide-text"></h1>').html(text).appendTo($slide);
+                $slide.appendTo($wrapper);
+                $(this).remove()
+            });
+            $container.addClass('oneImage')
+        } else if (style == "sameHeight") {
+            $slides.each(function () {
+                var $slide = $('<div class="swiper-slide"></div>');
+                $slide.html($(this).find("img"));
+                var text = $(this).find("dd").html();
+                $('<h1 class="slide-text"></h1>').html(text).appendTo($slide);
+                $slide.appendTo($wrapper);
+                $(this).remove()
+            });
+            $container.addClass('sameHeight')
+        }
+        $gal.children('br').remove();
+        if (options.pagination)
+            $container.append('<div class="swiper-pagination ' + options.pagination.substring(1) + '"></div>');
+        if (options.prevButton)
+            $container.append('<div class="swiper-button-prev ' + options.prevButton.substring(1) + '"></div>');
+        if (options.nextButton)
+            $container.append('<div class="swiper-button-next ' + options.nextButton.substring(1) + '"></div>');
+        var gallerySwiper = new Swiper('.' + id, options)
     }
-    $gal.children('br').remove();
-    if (options.pagination)
-        $container.append('<div class="swiper-pagination ' + options.pagination.substring(1) + '"></div>');
-    if (options.prevButton)
-        $container.append('<div class="swiper-button-prev ' + options.prevButton.substring(1) + '"></div>');
-    if (options.nextButton)
-        $container.append('<div class="swiper-button-next ' + options.nextButton.substring(1) + '"></div>');
-    var gallerySwiper = new Swiper('.' + id, options)
-}
-*/
+    */
     var swiperThumbs = new Swiper('#project-slider .swiper-container', {
         slidesPerView: 'auto',
         centeredSlides: true,
@@ -56,22 +56,9 @@ function Gallery($el, options) {
             enabled: true,
             onlyInViewport: true,
         },
-        /*controller: {
-            control: swiperBig,
-        },*/
         updateOnImagesReady: true,
-        //watchSlidesVisibility: true,
-        //watchSlidesProgress: true,
-        /*on: {
-            click: function (e) {
-                e.preventDefault();
-                //console.log('swiper clicked');
-                $('.b-overlay').addClass('show visible b-overlay--slider-mode').removeClass('b-overlay--gallery-mode');
-                swiperBig.slideTo(swiperThumbs.activeIndex());
-            },
-        },*/
     });
-    var swiperBig = new Swiper('#project-slider-big .swiper-container', {
+    var swiperBigProject = new Swiper('#project-slider-big .swiper-container', {
         slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
@@ -101,24 +88,64 @@ function Gallery($el, options) {
         observer: true,
         observeParents: true,
     });
-    /*swiperBig.on('slideChange', function () {
-        //console.log('slide changed');
-        swiperThumbs.slideTo(swiperBig.activeIndex);
-    });*/
     
-    //swiperContainer = $slider.find('.swiper-container');
-    //swiper = new Swiper(swiperContainer, args);
-    /*
-    setTimeout(function () {
-        swiperThumbs.update(true);
-        swiperThumbs.slideTo(0, 0)
-    }, 200);
-    */
+    $overlay_default_args = {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 1,
+            loadOnTransitionStart: true,
+        },
+        /*navigation: {
+            nextEl: '.slider--default .swiper-button-next',
+            prevEl: '.slider--default .swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+        },*/
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+        },
+        observer: true,
+        observeParents: true,
+    };
+
+    //var swiperBigDefault = new Swiper('.slider--default .swiper-container', $overlay_default_args);
+    //var swiperBigDefault = {};
+
+    $('.b-overlay.b-overlay--default').each(function (index, element) {
+        $overlay = $(this);
+        $swiper = $overlay.find('.swiper-container');
+        $swiper.addClass('s' + index);
+        //$('.s' + index).swiper($overlay_default_args);
+        var swiperBigDefault = new Swiper('.s' + index, $overlay_default_args);
+
+        $overlay.on('click', '.b-overlay__grid img', function (e) {
+            e.preventDefault();
+            $target = $(this).attr('data-target');
+            $overlay.addClass('b-overlay--slider-mode').removeClass('b-overlay--gallery-mode');
+            if ($overlay.is('.b-overlay--project')) {
+                setTimeout(function () {
+                    swiperBigProject.slideTo($target);
+                }, 100);
+            } else {
+                setTimeout(function () {
+                    swiperBigDefault.slideTo($target);
+                }, 100);
+            }
+        });
+    });
+
     function openSlider($id) {
         $overlay = $($id);
         $overlay.addClass('show visible b-overlay--slider-mode').removeClass('b-overlay--gallery-mode');
         $('body').addClass('overlay-opened');
-        swiperBig.update();
+        //swiperBigProject.update();
     };
     function openGallery($id) {
         $overlay = $($id);
@@ -129,14 +156,6 @@ function Gallery($el, options) {
         e.preventDefault();
         $clickedIndex = $(this).attr('data-target');
         openSlider('#project-gallery-overlay');
-        //console.log($clickedIndex);
-        //swiperBig.slideTo(swiperThumbs.realIndex + 1);
-        //swiperThumbs.slideTo($clickedIndex);
-        //swiperThumbs.update();
-        /*setTimeout(function () {
-            swiperBig.slideTo($clickedIndex);
-        }, 200);*/
-        //swiperBig.slideTo($clickedIndex + 1);
     });
     $(document).on('click', '.close', function (e) {
         e.preventDefault();
@@ -154,12 +173,12 @@ function Gallery($el, options) {
         $(this).parents('.b-overlay').addClass('b-overlay--slider-mode').removeClass('b-overlay--gallery-mode');
     });
 
-    $(document).on('click', '.b-overlay__grid img', function (e) {
+    $(document).on('click', '.b-overlay.b-overlay--project .b-overlay__grid img', function (e) {
         e.preventDefault();
         $target = $(this).attr('data-target');
         $(this).parents('.b-overlay').addClass('b-overlay--slider-mode').removeClass('b-overlay--gallery-mode');
         setTimeout(function () {
-            swiperBig.slideTo($target);
+            swiperBigProject.slideTo($target);
         }, 100);
     });
 

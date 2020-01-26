@@ -64,7 +64,7 @@
 				<?php endif; ?>
 				
 			</section>
-			<div id="project-gallery-overlay" class="b-overlay">
+			<div id="project-gallery-overlay" class="b-overlay b-overlay--project">
 				<div class="b-overlay__header">
 					<div class="b-overlay__site-title"><a href="<?php echo esc_url(home_url('/')); ?>">Jaakko Heikkilä</a></div>
 					<h3 class="b-overlay__gallery-title"><?php the_title(); ?></h3>				
@@ -75,8 +75,7 @@
 						<div class="grid-close js-overlay-grid-close">
 							<span></span>
 						</div>
-						
-						<a href="" class="close js-overlay-close">
+						<a href="#" class="close js-overlay-close">
 							<em class="line-1"></em>
 							<em class="line-2"></em>
 						</a>

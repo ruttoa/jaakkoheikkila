@@ -24,20 +24,20 @@ while ( have_posts() ) : the_post();
 				<div class="row">
 					<div class="col">
 						<h3>Wall 1</h3>
-						<?php
-						if( $gallery_1_thumb ) {
-							echo wp_get_attachment_image( $gallery_1_thumb, 'feed-thumbnail' );
-						}
-						?>
+						<?php if( $gallery_1_thumb ) { ?>
+							<a href="#" class="js-open-gallery" data-target="#wall-1-gallery">
+							<?php echo wp_get_attachment_image( $gallery_1_thumb, 'feed-thumbnail' ); ?>
+							</a>
+						<?php } ?>
 						<button class="open-gallery-link js-open-gallery" data-target="#wall-1-gallery">Click to open <span></span></button>
 					</div>
 					<div class="col">
 						<h3>Wall 2</h3>
-						<?php
-						if( $gallery_2_thumb ) {
-							echo wp_get_attachment_image( $gallery_2_thumb, 'feed-thumbnail' );
-						}
-						?>
+						<?php if( $gallery_2_thumb ) { ?>
+							<a href="#" class="js-open-gallery" data-target="#wall-2-gallery">
+							<?php echo wp_get_attachment_image( $gallery_2_thumb, 'feed-thumbnail' ); ?>
+							</a>
+						<?php } ?>
 						<button class="open-gallery-link js-open-gallery" data-target="#wall-2-gallery">Click to open <span></span></button>
 					</div>
 				</div>
@@ -47,6 +47,115 @@ while ( have_posts() ) : the_post();
 			</div>
 		</div>
 	</section>
+	<div id="wall-1-gallery" class="b-overlay b-overlay--default">
+		<div class="b-overlay__header">
+			<div class="b-overlay__site-title"><a href="<?php echo esc_url(home_url('/')); ?>">Jaakko Heikkilä</a></div>
+			<h3 class="b-overlay__gallery-title">Wall 1</h3>				
+			<div class="b-overlay__controls category-photographer">
+				<div class="grid-open js-overlay-grid-open show visible">
+					<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+				</div>
+				<div class="grid-close js-overlay-grid-close">
+					<span></span>
+				</div>
+				<a href="#" class="close js-overlay-close">
+					<em class="line-1"></em>
+					<em class="line-2"></em>
+				</a>
+			</div>
+		</div>
+		<div id="slider-big" class="slider slider--default b-overlay__slider">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+				<?php foreach( $gallery_1 as $image ): ?>
+					<div class="swiper-slide">
+						<div class="content-outer">
+							<div class="story-big-image">
+								<img src="" class="swiper-lazy" alt="<?php echo esc_attr($image['alt']); ?>" data-src="<?php echo $image['url']; ?>" />
+							</div>
+						</div>
+						<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+					</div>
+				<?php endforeach; ?>
+				</div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<div id="slider-grid" class="gallery-grid b-overlay__grid">
+			<div class="container container--narrow">
+				<div class="row">
+					<?php 
+					$i = 1;
+					foreach( $gallery_1 as $image ): 
+					?>
+					<div class="col">
+						<img data-target="<?php echo $i; ?>" src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+					</div>
+					<?php 
+					$i++; 
+					endforeach; 
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="wall-2-gallery" class="b-overlay b-overlay--default">
+		<div class="b-overlay__header">
+			<div class="b-overlay__site-title"><a href="<?php echo esc_url(home_url('/')); ?>">Jaakko Heikkilä</a></div>
+			<h3 class="b-overlay__gallery-title">Wall 2</h3>				
+			<div class="b-overlay__controls category-photographer">
+				<div class="grid-open js-overlay-grid-open show visible">
+					<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+				</div>
+				<div class="grid-close js-overlay-grid-close">
+					<span></span>
+				</div>
+				<a href="#" class="close js-overlay-close">
+					<em class="line-1"></em>
+					<em class="line-2"></em>
+				</a>
+			</div>
+		</div>
+		<div id="slider-big" class="slider slider--default b-overlay__slider">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+				<?php foreach( $gallery_2 as $image ): ?>
+					<div class="swiper-slide">
+						<div class="content-outer">
+							<div class="story-big-image">
+								<img src="" class="swiper-lazy" alt="<?php echo esc_attr($image['alt']); ?>" data-src="<?php echo $image['url']; ?>" />
+							</div>
+						</div>
+						<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+					</div>
+				<?php endforeach; ?>
+				</div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<div id="slider-grid" class="gallery-grid b-overlay__grid">
+			<div class="container container--narrow">
+				<div class="row">
+					<?php 
+					$i = 1;
+					foreach( $gallery_2 as $image ): 
+					?>
+					<div class="col">
+						<img data-target="<?php echo $i; ?>" src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+					</div>
+					<?php 
+					$i++; 
+					endforeach; 
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
 <?php endwhile; ?>
 </main>
 <?php get_footer(); ?>
