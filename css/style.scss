@@ -60,6 +60,12 @@ body {
         margin-left: 60px;
     }
 }
+button,
+[role="button"] {
+    &:focus {
+        outline: 0;
+    }
+}
 .d-none {
     display: none;
 }
@@ -838,11 +844,14 @@ blockquote {
     .text-link--big {
         font-size: 2.25rem;
     }
+    .col {
+        flex-basis: calc(50% - 15px);
+    }
+    .col:not(:first-child) {
+        margin-left: 30px;
+    }
     .entry-content {
         padding: 0 15px;
-    }
-    .navbar-nav {
-        flex-direction: row;
     }
     .home .section--gallery .gallery-text {
         margin-top: -100px;
@@ -851,6 +860,41 @@ blockquote {
     .row .hentry,
     .row.three-col .hentry {
         flex-basis: 50%;
+    }
+    .primary.row {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .row .hentry {
+        padding: 0 15px;
+    }
+    .b-overlay__grid .row .col {
+        flex-basis: calc(25% - 4rem);
+    }
+    .b-overlay__site-title {
+        position: absolute;
+        top: 32px;
+        left: 30px;
+    }
+    .b-overlay__gallery-title {
+        margin-top: 4rem;
+    }
+    .swiper-slide {
+        height: 400px;
+    }
+    .swiper-button-next {
+        right: 0;
+    }
+    .swiper-button-prev {
+        left: 0;
+    }
+    .b-overlay .swiper-slide {
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 60vh;
+    }
+    .wp-block-pullquote.has-background-black {
+        padding: 100px 2rem;
     }
     .footer {
         padding-top: 100px;
@@ -865,7 +909,95 @@ blockquote {
 }
 
 /* Extra small devices (portrait phones, less than 575px)*/
-@media (max-width: 575px) {}
+@media (max-width: 575px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col {
+        flex-basis: 100%;
+    }
+    .col:not(:first-child) {
+        margin-left: 0;
+    }
+    .row.three-col .hentry {
+        flex-basis: 100%;
+    }
+    .home .section--beyond .row .col:first-child {
+        flex-basis: 100%;
+        max-width: none;
+        padding-top: 0;
+    }
+    .home .section--beyond h2 {
+        margin-left: 0;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .project-hentry--home {
+        margin: 50px 0;
+    }
+    .home .section--projects .project-hentry .project-hentry__image {
+        flex-basis: 100%;
+        margin-bottom: 1rem;
+    }
+    .home .section--projects .project-hentry .project-hentry__text {
+        flex-basis: 100%;
+        margin-left: 0;
+        .text-link {
+            display: none;
+        }
+    }
+    .home .section--projects .text-link--big {
+        position: static;
+        bottom: auto;
+        left: auto;
+        transform: none;
+    }
+    .home .section--books .books-image {
+        padding: 1.5rem;
+    }
+    .home .section--books .books-image__inner {
+        max-width: none;
+    }
+    .home .section--gallery h2 {
+        margin-bottom: -1rem;
+        margin-left: 1rem;
+    }
+    .home .section--news .row {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .b-overlay__grid .row {
+        margin-left: -15px;
+        margin-right: -15px;
+        .col {
+            flex-basis: calc(25% - 30px);
+            margin: 2rem 15px;
+        }
+    }
+    .swiper-slide {
+        height: 300px;
+    }
+    .b-overlay .swiper-slide {
+        padding-left: 0;
+        padding-right: 0;
+        height: 50vh;
+    }
+    .b-overlay .swiper-button-next, 
+    .b-overlay .swiper-button-prev {
+        display: none;
+    }
+    .b-overlay .content-outer {
+        max-width: none;
+    }
+}
+
+@media (max-width: 375px) {
+    .b-overlay__grid .row .col {
+        flex-basis: calc(33.33% - 30px);
+        margin: 15px;
+    }
+}
 
 
 

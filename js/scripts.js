@@ -142,4 +142,11 @@ jQuery(document).ready(function ($) {
         openGallery($target);
     });
 
+    $('.navbar-toggler').on('click', function () {
+        $(this).toggleClass('is-active');
+        $('body').toggleClass('overlay-opened');
+        $target = $(this).attr('data-target');
+        $($target).toggleClass('show');
+    });
+
 });
