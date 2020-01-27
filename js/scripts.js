@@ -1,3 +1,11 @@
+AOS.init({
+    disable: 'mobile',
+    offset: 120,
+    duration: 1000,
+    delay: 100,
+    once: true,
+});
+
 jQuery(document).ready(function ($) {
 
     var swiperThumbs = new Swiper('#project-slider .swiper-container', {
