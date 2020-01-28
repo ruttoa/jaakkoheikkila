@@ -145,6 +145,23 @@ blockquote {
             height: 41px;
         }
     }
+    &--small {
+        padding-left: 0;
+        padding-right: 4rem;
+        font-size: .6rem;
+        span {
+            width: 12px;
+            height: 12px;
+            &:before {
+                width: 22px;
+                height: 22px;
+            }
+            &:after {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
 }
 .overlay-opened {
     overflow: hidden;
@@ -303,14 +320,18 @@ blockquote {
     }
     .book {
         position: relative;
-        flex: 0 0 50%;
+        flex: 0 0 100%;
+        margin-bottom: 2rem;
+        .open-gallery-link {
+            margin: 0;
+            vertical-align: super;
+        }
     }
-    #book-1 {
-        flex-basis: 36%;
-    }
-    #book-2 {
-        flex-basis: 59%;
-        margin-right: -65px;
+    .book__title {
+        font-size: 1.95rem;
+        margin-bottom: .5rem;
+        display: inline-block;
+        padding-right: 1rem;
     }
 }
 .news-hentry {
@@ -714,10 +735,12 @@ blockquote {
 \*------------------------------------*/
 
 .footer{
-    position: relative;
-    padding-top: 140px;
     font-size: .95rem;
     margin-top: 200px;
+    .container {
+        position: relative;
+        padding-top: 140px;
+    }
 }
 .footer__text {
     width: 70%;
@@ -804,6 +827,12 @@ blockquote {
     html {
         font-size: 16px;
     }
+    .page-template-books {
+        .book {
+            flex-basis: 50%;
+            padding: 0 15px 2rem;
+        }
+    }
 }
 
 /* Medium devices (tablets, 768px and up)*/
@@ -815,6 +844,50 @@ blockquote {
 		max-width: 900px;
 		margin-left: 6rem;
 	}
+    .page-template-books {
+        .book {
+            margin-bottom: 5rem;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .book__title {
+            font-size: 1.95rem;
+        }
+        #book-1 {
+            flex-basis: 36%;
+        }
+        #book-2 {
+            flex-basis: 59%;
+            margin-right: -65px;
+        }
+        #book-3 {
+            flex-basis: 29.2%;
+            margin-top: -100px;
+        }
+        #book-4 {
+            flex-basis: 53.9%;
+            margin-right: 7.5%;
+            margin-left: auto;
+        }
+        #book-5 {
+            flex-basis: 31%;
+        }
+        #book-6 {
+            flex-basis: 50%;
+            margin-right: 5.6%;
+            margin-left: auto;
+        }
+        #book-7 {
+            flex-basis: 30%;
+            margin-top: -100px;
+            margin-left: 2.4%;
+        }
+        #book-8 {
+            flex-basis: 36%;
+            margin-right: 14%;
+            margin-left: auto;
+        }
+    }
 }
 
 /* Large devices (desktops, 992px and up)*/

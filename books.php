@@ -1,48 +1,79 @@
-<?php 
+<?php
 /* Template Name: Books */
 get_header(); ?>
 <main role="main" class="clearfix">
-<?php while ( have_posts() ) : the_post(); ?>
-	<section>
-		<div class="container container--narrow">
-			<figure class="projects-pullquote wp-block-pullquote is-style-solid-color">
-				<blockquote>
-					<p>His photographs often contain
-					nostalgia for a lost world
-					as well as warm humour. </p>
-					<cite>Books</cite>
-				</blockquote>
-			</figure>
-			<div class="books-list-wrapper books-list-first clearfix">
-				<div id="book-1" class="book">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/books/book-1.jpg" alt="" />
-					<h4 class="book-title">Silent talks, 2011</h4>
+	<?php while (have_posts()) : the_post(); ?>
+		<section>
+			<div class="container container--narrow">
+				<figure class="projects-pullquote wp-block-pullquote is-style-solid-color">
+					<blockquote data-aos="fade-up" data-aos-offset="0">
+						<p>His photographs often contain
+							nostalgia for a lost world
+							as well as warm humour. </p>
+						<cite>Books</cite>
+					</blockquote>
+				</figure>
+				<div class="books-list-wrapper books-list-first clearfix">
+					<?php
+					$book_ids = get_field('books', false, false);
+					$query = new WP_Query(array(
+						'post_type'     => 'book',
+						'post_status'	=> 'publish',
+						'posts_per_page' => 4,
+						'post__in'			=> $book_ids,
+						'orderby'        	=> 'post__in',
+					));
+					$i = 1;
+					if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+					?>
+							<div id="book-<?php echo $i; ?>" class="book" data-aos="fade-up">
+								<a href="#" data-target="#" class="js-open-gallery">
+									<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/books/book-<?php echo $i; ?>.jpg" alt="" />
+									<h4 class="book__title"><?php the_title(); ?></h4>
+									<button class="open-gallery-link open-gallery-link--small js-open-gallery">Open gallery <span></span></button>
+								</a>
+							</div>
+					<?php
+							$i++;
+						endwhile;
+						wp_reset_postdata();
+					endif;
+					?>
 				</div>
-				<div id="book-2" class="book">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/books/book-2.jpg" alt="" />
-					<h4 class="book-title">Rooms hidden by the Water, 2016</h4>
+				<figure class="projects-pullquote wp-block-pullquote is-style-solid-color">
+					<blockquote>
+						<p>At the same time, the photographs
+							bring the viewer to ponder
+							the miracle of being in the world.</p>
+						<cite>Books</cite>
+					</blockquote>
+				</figure>
+				<div class="books-list-wrapper books-list-second clearfix">
+					<?php
+					$query = new WP_Query(array(
+						'post_type'     => 'book',
+						'post_status'	=> 'publish',
+						'posts_per_page' => 4,
+						'offset' => 4,
+						'post__in'			=> $book_ids,
+						'orderby'        	=> 'post__in',
+					));
+					if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+					?>
+							<div id="book-<?php echo $i; ?>" class="book" data-aos="fade-up">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/books/book-<?php echo $i; ?>.jpg" alt="" />
+								<h4 class="book__title"><?php the_title(); ?></h4>
+								<button class="open-gallery-link open-gallery-link--small js-open-gallery">Open gallery <span></span></button>
+							</div>
+					<?php
+							$i++;
+						endwhile;
+						wp_reset_postdata();
+					endif;
+					?>
 				</div>
 			</div>
-			<figure class="projects-pullquote wp-block-pullquote is-style-solid-color">
-				<blockquote>
-					<p>At the same time, the photographs
-					bring the viewer to ponder
-					the miracle of being in the world.</p>
-					<cite>Books</cite>
-				</blockquote>
-			</figure>
-			<div class="books-list-wrapper books-list-second clearfix">
-				<div id="book-1" class="book">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/books/book-1.jpg" alt="" />
-					<h4 class="book-title">Silent talks, 2011</h4>
-				</div>
-				<div id="book-2" class="book">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/books/book-2.jpg" alt="" />
-					<h4 class="book-title">Rooms hidden by the Water, 2016</h4>
-				</div>
-			</div>
-		</div>
-	</section>
-<?php endwhile; ?>
+		</section>
+	<?php endwhile; ?>
 </main>
 <?php get_footer(); ?>
