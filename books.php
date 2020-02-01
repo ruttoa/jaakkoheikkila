@@ -107,6 +107,9 @@ get_header(); ?>
 						'orderby'        	=> 'post__in',
 					));
 					if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
+							$book_gallery = get_field('book_gallery');
+							$book_text_left = get_field('book_text_left');
+							$book_text_right = get_field('book_text_right');
 					?>
 							<div id="book-<?php echo $i; ?>" class="book" data-aos="fade-up">
 								<a href="#" data-target="#book-<?php echo $i; ?>-gallery" class="js-open-gallery">
