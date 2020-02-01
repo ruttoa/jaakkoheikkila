@@ -62,7 +62,7 @@ get_header(); ?>
 									</div>
 								</div>
 								<div id="slider-grid" class="gallery-grid b-overlay__grid">
-									<div class="container container--narrow">
+									<div class="container">
 										<div class="row">
 											<?php
 											if ($book_gallery) :
@@ -141,7 +141,7 @@ get_header(); ?>
 									</div>
 								</div>
 								<div id="slider-grid" class="gallery-grid b-overlay__grid">
-									<div class="container container--narrow">
+									<div class="container">
 										<div class="row">
 											<?php
 											if ($book_gallery) :

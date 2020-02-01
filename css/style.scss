@@ -1076,13 +1076,18 @@ blockquote {
         margin-left: -15px;
         margin-right: -15px;
     }
-    .b-overlay__grid .row {
+    .b-overlay__grid .row,
+    .b-overlay.b-overlay--book .b-overlay__grid .row {
         margin-left: -15px;
         margin-right: -15px;
         .col {
             flex-basis: calc(25% - 30px);
             margin: 2rem 15px;
         }
+    }
+    .b-overlay.b-overlay--book .b-overlay__grid .row .col {
+        flex-basis: calc(100% - 30px);
+        margin: 2rem 15px;
     }
     .swiper-slide {
         height: 300px;
@@ -1130,17 +1135,17 @@ blockquote {
 \*------------------------------------*/
 
 ::selection {
-	background:#04A4CC;
+	background:#000;
 	color:#FFF;
 	text-shadow:none;
 }
 ::-webkit-selection {
-	background:#04A4CC;
+	background:#000;
 	color:#FFF;
 	text-shadow:none;
 }
 ::-moz-selection {
-	background:#04A4CC;
+	background:#000;
 	color:#FFF;
 	text-shadow:none;
 }
