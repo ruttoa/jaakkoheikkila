@@ -223,7 +223,10 @@ img.emoji {
 /* Extra small devices (portrait phones, less than 575px) */
 @media (max-width: 575px) {
     h1, h2 {
-        font-size: 2.5rem; 
+        font-size: 2.75rem; 
+        br {
+            display: none;
+        }
     }
     h3 {
         font-size: 1.5rem;

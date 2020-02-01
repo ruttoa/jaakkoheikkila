@@ -172,6 +172,9 @@ blockquote {
     MAIN
 \*------------------------------------*/
 
+.wrapper {
+    overflow: hidden;
+}
 .page-header {
 	padding: 220px 0 2rem;
 }
@@ -254,7 +257,7 @@ blockquote {
         .gallery-text {
             text-align: center;
             max-width: 560px;
-            margin: -175px auto 0;
+            margin: -20% auto 0;
         }
     }
     &--news {
@@ -741,6 +744,9 @@ blockquote {
         position: relative;
         padding-top: 140px;
     }
+    a:hover {
+        text-decoration: underline;
+    }
 }
 .footer__text {
     width: 70%;
@@ -927,7 +933,6 @@ blockquote {
         padding: 0 15px;
     }
     .home .section--gallery .gallery-text {
-        margin-top: -100px;
         padding: 0 30px;
     }
     .row .hentry,
@@ -970,7 +975,7 @@ blockquote {
         padding: 100px 2rem;
     }
     .footer {
-        padding-top: 100px;
+        margin-top: 100px;
     }
     .footer__text {
         width: calc(100% - 30px);
@@ -996,15 +1001,25 @@ blockquote {
     .row.three-col .hentry {
         flex-basis: 100%;
     }
+    .page-header {
+        padding: 2rem 0;
+    }
+    .home .section--intro h1 {
+        margin-top: 0;
+    }
     .home .section--beyond .row .col:first-child {
         flex-basis: 100%;
         max-width: none;
         padding-top: 0;
+        order: 2;
     }
     .home .section--beyond h2 {
         margin-left: 0;
         margin-top: 3rem;
         margin-bottom: 3rem;
+    }
+    .home .section--gallery {
+        background: linear-gradient(to top, #ffffff 0%,#ffffff 50%,$grey 50%,$grey 100%);
     }
     .project-hentry--home {
         margin: 50px 0;
@@ -1062,6 +1077,20 @@ blockquote {
     }
     .b-overlay .content-outer {
         max-width: none;
+    }
+    .footer .container {
+        padding-top: 20%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .footer__text {
+        width: 95%;
+        width: calc(100% - 15px);
+    }
+    .footer__image {
+        width: 75%;
+        width: calc(75% - 30px);
+        padding-top: 50%;
     }
 }
 

@@ -75,6 +75,15 @@
             }
         }
     }
+    // Do not display hover effect on active item if another item is hovered
+    &:hover .menu-item.current-menu-item a:not(:hover) {
+        &:before {
+            width: 0;
+        }
+        &:after {
+            width: 0;
+        }
+    }
 }
 .site-title {
     font-size: 1.5rem;
@@ -216,10 +225,10 @@
         margin: auto;
         font-family: $font-headings;
         .menu-item {
-            margin: .5rem;
+            margin: .75rem;
             text-align: center;
             a {
-                font-size: 2rem;
+                font-size: 2.5rem;
                 line-height: 1.5;
                 display: inline-block;
                 padding-right: 1rem;
