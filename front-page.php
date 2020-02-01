@@ -45,7 +45,7 @@
 					endif;
 					?>
 				</div>
-				<a class="text-link text-link--big" href="#">explore all</a>
+				<a class="text-link text-link--big" href="<?php echo get_post_type_archive_link('project'); ?>">explore all</a>
 			</div>
 		</section>
 		<section class="clearfix section section--books">
@@ -92,7 +92,7 @@
 					endif;
 					?>
 				</div>
-				<a class="text-link" href="#">All news</a>
+				<a class="text-link" href="<?php echo get_post_type_archive_link( 'post' ); ?>">All news</a>
 			</div>
 		</section>
 	<?php endwhile; ?>

@@ -7,19 +7,19 @@
     			<div class="row">
     				<div class="col widget">
     					<h5 class="widget-title">Phone</h5>
-    					<p>+358 123 4567</p>
+    					<p><a href="tel:+358400398244">+358 400 398244</a></p>
     				</div>
     				<div class="col widget">
     					<h5 class="widget-title">Mail</h5>
-    					<p><a href="mailto:contact@jaakkoheikkila.com">contact@jaakkoheikkila.com</a></p>
+    					<p><a href="mailto:studioblue@co.inet.fi">studioblue@co.inet.fi</a></p>
     				</div>
     			</div>
     			<div class="row">
     				<div class="col widget">
     					<h5 class="widget-title">Follow</h5>
     					<ul class="some-menu">
-    						<li><a href="https://instagram.com">Instagram</a></li>
-    						<li><a href="https://facebook.com">Facebook</a></li>
+    						<li><a href="https://www.instagram.com/heikkila.jaakko/">Instagram</a></li>
+    						<li><a href="https://www.facebook.com/jaakko.heikkila.12">Facebook</a></li>
     					</ul>
     				</div>
     				<div class="col widget">
