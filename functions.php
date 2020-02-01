@@ -54,6 +54,7 @@ function theme_setup() {
     add_image_size('hero-image', 1440, 1440, false);
     add_image_size('feed-thumbnail', 440, 300, true );
     add_image_size('project-home', 850, 400, true );
+    add_image_size('project-slider', 0, 500, false);
 
     // Disable Gutenberg Custom Colors
     add_theme_support( 'disable-custom-colors' );
