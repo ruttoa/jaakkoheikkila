@@ -322,7 +322,6 @@ blockquote {
         justify-content: space-between;
     }
     .book {
-        position: relative;
         flex: 0 0 100%;
         margin-bottom: 2rem;
         .open-gallery-link {
@@ -608,6 +607,10 @@ blockquote {
     text-align: center;
     background-color: #fff;
 }
+.b-overlay__text {
+    margin-bottom: 2rem;
+    font-size: .9rem;
+}
 .b-overlay__site-title {
     font-family: "GT America",serif;
     font-size: 10px;
@@ -714,6 +717,24 @@ blockquote {
     img {
         margin: auto;
         cursor: pointer;
+    }
+}
+.b-overlay.b-overlay--book {
+    .b-overlay__header {
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+    .b-overlay__gallery-title {
+        text-align: left;
+    }
+    .b-overlay__grid {
+        .row .col {
+            flex-basis: calc(33.33% - 4rem);
+        }
+        img {
+            cursor: default;
+        }
     }
 }
 .b-overlay.b-overlay--gallery-mode {
