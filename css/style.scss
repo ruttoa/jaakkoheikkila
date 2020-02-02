@@ -841,6 +841,21 @@ blockquote {
 }
 
 
+.error404 {
+    .page-header {
+        text-align: center;
+        padding-top: 2rem;
+    }
+    .page-title span {
+        display: block;
+        font-size: 10rem;
+    }
+    .projects-feed-section h3 {
+        text-align: center;
+    }
+}
+
+
 
 
 /*------------------------------------*\
