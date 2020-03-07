@@ -595,6 +595,9 @@ blockquote {
         letter-spacing: .02em;
     }
 }
+.page-template-gallery .b-overlay {
+    background-color: #f4f4f4;
+}
 .admin-bar .b-overlay.show {
     top: 32px;
     height: calc(100vh - 32px);
@@ -605,7 +608,6 @@ blockquote {
     z-index: 22;
     width: 100%;
     text-align: center;
-    background-color: #fff;
 }
 .b-overlay__text {
     margin-bottom: 2rem;
