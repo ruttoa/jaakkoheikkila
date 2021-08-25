@@ -22,7 +22,7 @@
             "filters": "",
             "elements": "",
             "min": "",
-            "max": 8,
+            "max": "",
             "return_format": "id"
         }
     ],
@@ -45,5 +45,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1580213368
+    "modified": 1629907849
 }
